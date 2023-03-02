@@ -2,8 +2,6 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "@/styles/News.module.css";
 
-const API_KEY = process.env.API_KEY;
-
 export default function Home() {
   const [category, setCategory] = useState("general");
   const [country, setCountry] = useState("jp");
@@ -51,26 +49,23 @@ export default function Home() {
       </div>
       <div className={styles.articles}>
         {articles.map((article) => (
-          <a
-            key={article.url}
-            href={article.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className={styles.article}>
-              <div className={styles.imageWrapper}>
-                <img
-                  src={article.urlToImage || "/no_image.png"}
-                  alt="thumbnail"
-                />
+          <article className={styles.list} key={article.url}>
+            <Link
+              key={article.url}
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className={styles.article}>
+                <div className={styles.imageWrapper}></div>
+                <div className={styles.contentWrapper}>
+                  <p className={styles.title}>{article.title}</p>
+                  <p className={styles.description}>{article.description}</p>
+                  <p className={styles.source}>{article.source.name}</p>
+                </div>
               </div>
-              <div className={styles.contentWrapper}>
-                <p className={styles.title}>{article.title}</p>
-                <p className={styles.description}>{article.description}</p>
-                <p className={styles.source}>{article.source.name}</p>
-              </div>
-            </div>
-          </a>
+            </Link>
+          </article>
         ))}
       </div>
     </div>
