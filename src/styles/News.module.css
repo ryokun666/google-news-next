@@ -1,0 +1,52 @@
+/* styles.module.css */
+
+.card {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin: 10px;
+    color: var(--color-secondary);
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 10px;
+    color: var(--color-text);
+}
+
+.button {
+    background-color: var(--color-secondary);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--color-tertiary);
+}
+
+.select {
+    margin: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--color-secondary);
+    color: white;
+}
